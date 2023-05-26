@@ -82,6 +82,8 @@ body {
 /* POSITIONS ELEMNTS */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container {
@@ -216,14 +218,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(
-      to right,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/hero/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .hero-main-h {
@@ -305,15 +306,11 @@ body {
   height: 112px;
   background-color: var(--filter-button-background-color);
   border-radius: 4px;
+  margin-bottom: 8px;
 }
 
 .benefits .section-list:last-child {
   margin-right: 0;
-}
-
-.benefits .icon {
-  height: 64px;
-  width: 64px;
 }
 
 .section-title {
@@ -450,9 +447,14 @@ body {
   cursor: pointer;
 }
 
+.our-team .social-list-item:hover svg,
+.our-team .social-list-item:focus svg {
+  background-color: var(--active-button-background-color);
+}
+
 .our-team .social-link:hover,
 .our-team .social-link:focus {
-  background-color: var(--acctent-hover-color);
+  background-color: var(--active-button-background-color);
 }
 
 /* .our-team .social-list-item {
@@ -487,21 +489,32 @@ body {
 }
 
 .customers-list-item {
+  width: calc((100% - 120px) / 6);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.customers-company {
+}
+
+.customers-link {
+  height: 100%;
+  width: 100%;
+  /* height: 88px;
+  width: 168px; */
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 88px;
-  width: 168px;
-  fill: var(--footer-paragraph-text-color);
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  cursor: pointer;
   fill: #8e8f99;
 }
 
-.customers-list-item:hover,
-.customers-list-item:focus {
-  border-color: var(--acctent-hover-color);
+.customers-link:hover,
+.customers-link:focus {
+  outline: none;
+  border: 1px solid var(--acctent-hover-color);
   fill: var(--acctent-hover-color);
 }
 
@@ -563,14 +576,13 @@ body {
 }
 
 .footer .social-list {
-  margin: 0;
   display: flex;
   list-style: none;
   padding: 0;
   gap: 24px;
 }
 
-.footer .social-list-item {
+.footer .social-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -581,11 +593,15 @@ body {
   cursor: pointer;
 }
 
-.footer .social-list-item:hover,
-.footer .social-list-item:focus {
+.footer .social-list-item:hover svg,
+.footer .social-list-item:focus svg {
   background-color: #31d0aa;
 }
 
+.footer .social-link:hover,
+.footer .social-link:focus {
+  background-color: #31d0aa;
+}
 /* portfolio.html */
 /* buttons */
 
